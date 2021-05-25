@@ -1,12 +1,9 @@
 name: Periodic Healtcheck
 
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches: [master]
-    types: [opened, synchronize]
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: '0 22 * * *'
 
 jobs:
   periodic_health_check:
